@@ -736,6 +736,97 @@
 .resume-btn:hover{
   transform:translateY(-3px);
 }
+
+.education-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #111827,
+    #020617
+  );
+  min-height: 100vh;
+}
+
+.education-section h2 {
+  color: white;
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+}
+
+.mission-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-card {
+  width: 320px;
+  background: rgba(20, 20, 30, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+  color: white;
+  transition: 0.4s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+}
+
+.mission-card h3 {
+  color: #00d4ff;
+}
+
+.mission-card h4 {
+  color: #ffffff;
+}
+
+.mission-card p {
+  color: #cfcfcf;
+}
+
+.mission-card span {
+  color: #00d4ff;
+  font-weight: 600;
+}
+
+.rocket-line {
+  width: 4px;
+  height: 80px;
+  background: linear-gradient(#0077ff, #00d4ff);
+  margin: 10px 0;
+  position: relative;
+}
+
+.rocket-line::before {
+  content: "🚀";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fly 3s infinite;
+}
+
+@keyframes fly {
+  0% { top: 100%; }
+  100% { top: -20px; }
+}
+
+.target {
+  background: linear-gradient(135deg, #0077ff, #00d4ff);
+  color: white;
+}
+
+.target p,
+.target span,
+.target h3,
+.target h4 {
+  color: white;
+}
 </style>
 </head>
 <body>
@@ -813,6 +904,51 @@
   </div>
 </section>
 
+<section class="education-section">
+  <h2>🚀 Academic Mission Journey</h2>
+
+  <div class="mission-container">
+
+    <div class="mission-card">
+      <div class="icon">🌍</div>
+      <h3>Launch Pad</h3>
+      <h4>10th Class</h4>
+      <p>Cambridge Matric Higher Secondary School, Agasthiarpatti</p>
+      <span>2021 - 2022 | 94.4%</span>
+    </div>
+
+    <div class="rocket-line"></div>
+
+    <div class="mission-card">
+      <div class="icon">🚀</div>
+      <h3>Mission 01</h3>
+      <h4>12th class</h4>
+      <p>Cambridge Matric Higher Secondary School, Agasthiarpatti</p>
+      <span>2020 - 2022 | 89.4%</span>
+    </div>
+
+    <div class="rocket-line"></div>
+
+    <div class="mission-card">
+      <div class="icon">🛸</div>
+      <h3>Mission 02</h3>
+      <h4>B.Tech (AIDS)</h4>
+      <p>Kongu Engineering College, Perundurai</p>
+      <span>202 4- 2028 | 9.16 CGPA</span>
+    </div>
+
+    <div class="rocket-line"></div>
+
+    <div class="mission-card target">
+      <div class="icon">🎯</div>
+      <h3>Target</h3>
+      <h4>Software Engineer</h4>
+      <p>Building Innovative Solutions</p>
+      <span>Future Goal</span>
+    </div>
+
+  </div>
+</section>
 <!-- ============ INTERESTS ============ -->
 <section id="interests" class="tight">
   <div class="container">
