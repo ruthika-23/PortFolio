@@ -804,16 +804,21 @@
 }
 
 .rocket-line::before {
-  content: "🚀";
+  content: "🛸";
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  animation: fly 3s infinite;
+  animation: fly 3s infinite linear;
 }
 
 @keyframes fly {
-  0% { top: 100%; }
-  100% { top: -20px; }
+  0% {
+    top: -20px;
+  }
+
+  100% {
+    top: 100%;
+  }
 }
 
 .target {
@@ -908,6 +913,7 @@
   <h2>🚀 Academic Mission Journey</h2>
 
   <div class="mission-container">
+    <div class="moving-rocket"></div>
 
     <div class="mission-card">
       <div class="icon">🌍</div>
@@ -1380,6 +1386,31 @@
       }
     }
   })();
+  const rocket = document.querySelector(".moving-rocket");
+const cards = document.querySelectorAll(".mission-card");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+
+      if (entry.isIntersecting) {
+
+        const card = entry.target;
+
+        const cardTop =
+          card.offsetTop +
+          card.offsetHeight / 2;
+
+        rocket.style.top = `${cardTop}px`;
+      }
+    });
+  },
+  {
+    threshold: 0.6
+  }
+);
+
+cards.forEach((card) => observer.observe(card));
 </script>
 
 </body>
